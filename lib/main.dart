@@ -3,7 +3,7 @@ import 'database/db_helper.dart';
 import 'screens/folder_screen.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitalized();
+  WidgetsFlutterBinding.ensureInitialized();
   // ensure set up of Database before running app
   await DB.instance.init();
   runApp(const CardOrganizerApp());
@@ -20,9 +20,9 @@ class CardOrganizerApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorSchemeSeed: Colors.redAccent,
-        brightnessL Brightness.light,
+        brightness: Brightness.light,
       ),
-      darkThemeL ThemeData(
+      darkTheme: ThemeData(
         useMaterial3: true, 
         colorSchemeSeed: Colors.redAccent,
         brightness: Brightness.dark,

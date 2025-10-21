@@ -18,18 +18,18 @@ class CardModel {
             'id': id,
             'name': name,
             'suit': suit,
-            'imageUrl': iamgeUrl,
+            'imageUrl': imageUrl,
             'folderId': folderId,
         };
     }
 
-    factory CardModel.frontMap(Map<String, dynamic> map) {
+    factory CardModel.fromMap(Map<String, dynamic> map) {
         return CardModel(
-            id: map['id'] as int?
+            id: map['id'] as int?,
             name: map['name'] as String,
             suit: map['suit'] as String,
-            iamgeUrl: map['imageUrl'] as String,
-            fodlerId: map['folderId'] as int?,
+            imageUrl: map['imageUrl'] as String,
+            folderId: map['folderId'] as int?,
         );
     }
 }

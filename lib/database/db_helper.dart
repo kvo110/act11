@@ -22,7 +22,7 @@ class DB {
             version: 1,
             onCreate: (db, version) async {
                 // creating folders table
-                await db.excute('''
+                await db.execute('''
                     CREATE TABLE folders (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                         name TEXT NOT NULL,
@@ -52,7 +52,7 @@ class DB {
 
     // seeding helpers
     Future<void> _seedInitialData(Database db) async {
-        final now = DataTime.now().toIso8601String();
+        final now = DateTime.now().toIso8601String();
         final folderNames = ['Hearts', 'Spades', 'Diamonds', 'Clubs'];
 
         for (final name in folderNames) {
@@ -91,16 +91,16 @@ class DB {
             final suitCode = suitEntry.value;
 
             for (final r in ranks) {
-                final rankCode = r['rank'!];
+                final rankCode = r['rank']!;
                 final code = rankCode == '10' ? '0$suitCode' : '${rankCode}${suitCode}';
                 final label = r['label']!;
                 final name = '$label of $suitName';
-                final iamge = 'https://deckofcardsapi.com/static/img/$code.png';
+                final image = 'https://deckofcardsapi.com/static/img/$code.png';
 
                 await db.insert('cards', {
                     'name': name, 
                     'suit': suitName,
-                    'iamgeUrl': image,
+                    'imageUrl': image,
                     'folderId': null, // start in the deck (unassigned)
                 });
             }

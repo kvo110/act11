@@ -27,7 +27,7 @@ class _FolderScreenState extends State<FolderScreen> {
     }
 
     @override
-    Widget build(BuildCOntext context) {
+    Widget build(BuildContext context) {
         return Scaffold(
             appBar: AppBar(
                 title: const Text('Card Organizer'),
@@ -90,7 +90,7 @@ class _FolderCard extends StatelessWidget {
             child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),
-                    colro: Theme.of(context).cardColor,
+                    color: Theme.of(context).cardColor,
                     boxShadow: [
                         BoxShadow(
                             blurRadius: 10,
